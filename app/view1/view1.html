@@ -1,14 +1,10 @@
-<h1>Umazon</h1>
-<br>
-<p id="welcome">Bem vindo a página de compra e venda da <a href="http://www.uma.pt"><i>Universidade da Madeira</i></a></p>
 <!--Promotion Items-->
-<div class="row" ng-controller="View1Ctrl as list">
-        <div class="col-xs-6" ng-repeat="product in list.products">
-            <h3 class="product_name">{{product.name}} <button class="btn btn-warning">Review this product</button></h3>
-            <img height="240" width="240" title="Extra Expensive Item" ng-src="{{product.image}}">
+<div class="row">
+        <div class="col-xs-6" ng-repeat="product in view1.products">
+            <h3 class="product_name"><a href="#show_product/{{product.id}}">{{product.name}}</a></h3>
+            <img class="image" height="240" width="{{product.image_width}}" title="Extra Expensive Item" ng-src="{{product.image}}">
+            <button class="btn btn-success review">Buy this product</button><button class="btn btn-warning review">Review this product</button>
             <p class="product_description"><strong> Description: </strong>{{ product.description }}</p>
-            <p class="price">{{product.price | currency: '€'}}</p>
+            <p  class="price">{{product.price | currency: '€'}}</p>
         </div>
 </div>
-<hr/>
-<p style="font-size: 60%">Sem fins comerciais <a href="suporte.html">Suporte ao cliente</a></p>
